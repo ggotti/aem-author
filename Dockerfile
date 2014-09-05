@@ -10,6 +10,9 @@ RUN wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-1.noarch
 RUN yum -y install epel-release-7-1.noarch.rpm
 RUN yum install -y python-psutil
 
+#Copies required build media
+ONBUILD ADD cq-author-4502.jar /aem/cq-author-4502.jar
+ONBUILD ADD license.properties /aem/license.properties
 ONBUILD ADD aemInstaller.py /aem/aemInstaller.py
 
 # Extracts AEM #
