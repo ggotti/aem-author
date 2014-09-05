@@ -6,7 +6,7 @@ MAINTAINER ggotti
 FROM ariya/centos7-oracle-jre7
 
 #Enabling Centos EPL repository, and then installs python modules.
-RUN wget http://dl.fedoraproject.org/pub/epel/7/x86_64/epel-release-7-1.noarch.rpm
+RUN wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-1.noarch.rpm
 RUN yum -y install epel-release-7-1.noarch.rpm
 RUN yum install -y python-psutil
 
