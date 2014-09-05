@@ -13,14 +13,14 @@ RUN yum install -y python-psutil
 #Copies required build media
 ONBUILD ADD cq-author-4502.jar /aem/cq-author-4502.jar
 ONBUILD ADD license.properties /aem/license.properties
-ONBUILD ADD aemInstaller.py /aem/aemInstaller.py
+ONBUILD ADD https://raw.githubusercontent.com/ggotti/aem_author/master/aemInstaller.py /aem/aemInstaller.py
 
 # Extracts AEM #
 ONBUILD WORKDIR /aem
 ONBUILD RUN java -XX:MaxPermSize=256m -Xmx1024M -jar cq-author-4502.jar -unpack -r nosamplecontent
 
 # Add customised log file
-ONBUILD ADD org.apache.sling.commons.log.LogManager.config /aem/crx-quickstart/install
+ONBUILD ADD https://raw.githubusercontent.com/ggotti/aem_author/master/org.apache.sling.commons.log.LogManager.config /aem/crx-quickstart/install
 
 # Installs AEM
 ONBUILD RUN python aemInstaller.py
