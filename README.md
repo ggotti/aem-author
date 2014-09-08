@@ -5,10 +5,10 @@ to be run within a Docker container.
 
 ## About docker-aem-author
 
-> *You must have a copy of the AEM 6 Installation Media for this to work
+> *You must have a copy of the AEM 6 installation Media for this to work
 
-You must copy your AEM installation Media into the base directory before
-running this image. The image expects the following files within that directory:
+You must copy your AEM installation media into the base directory before
+running this image. The image expects the following files within the base directory:
 * cq-author-4502.jar
 * license.properties
 
@@ -33,5 +33,5 @@ $ docker run --name AEM_AUTH -p 4502:4502 -d "<your_build_tag>"
 Where
 * `-d` will run a detached session running in the background
 * `--name` will assign the given name to the running container instance
-* `<your_build_tag>` the name of this docker image
+* `<your_build_tag>` the name of your docker image
 * `-p 4502:4502` will expose the AEM default author port
